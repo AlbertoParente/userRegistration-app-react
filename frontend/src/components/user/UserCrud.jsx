@@ -37,10 +37,10 @@ export default class UserCrud extends Component {
                 this.setState({ user: initialState.user, list })
             })
     }
-    
+
     getUpdatedList(user, add = true) {
         const list = this.state.list.filter(u => u.id !== user.id)
-        if(add) list.unshift(user)
+        if (add) list.unshift(user)
         return list
     }
 
@@ -57,20 +57,20 @@ export default class UserCrud extends Component {
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>Nme</label>
-                            <input type="text" className="form-control" 
+                            <input type="text" className="form-control"
                                 name="name"
                                 value={this.state.user.name}
-                                onChange={ e=> this.updateField(e) }
+                                onChange={e => this.updateField(e)}
                                 placeholder="Enter the name...!" />
                         </div>
                     </div>
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                            <input type="text" className="form-control" 
-                                    name="email"
-                                    value={this.state.user.email}
-                                    onChange={ e=> this.updateField(e) }
-                                    placeholder="Enter the e-mail...!" />
+                            <input type="text" className="form-control"
+                                name="email"
+                                value={this.state.user.email}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Enter the e-mail...!" />
                         </div>
                     </div>
                 </div>
@@ -78,11 +78,11 @@ export default class UserCrud extends Component {
                 <div className="row">
                     <div className="col-12 d-flex justify-content-end">
                         <button className="btn btn-primary"
-                            onClick={ e=> this.save(e) }>
+                            onClick={e => this.save(e)}>
                             Save
                         </button>
                         <button className="btn btn-secondary ml-2"
-                            onClick={ e=> this.clear(e) }>
+                            onClick={e => this.clear(e)}>
                             Cancel
                         </button>
                     </div>
@@ -145,7 +145,7 @@ export default class UserCrud extends Component {
     render() {
 
         return (
-            <Main { ...headerProps }>
+            <Main {...headerProps}>
                 {this.renderForm()}
                 {this.renderTable()}
             </Main>
