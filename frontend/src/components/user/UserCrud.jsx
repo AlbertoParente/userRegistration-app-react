@@ -31,6 +31,7 @@ export default class UserCrud extends Component {
         const user = this.satate.user
         const method = user.id ? 'put' : 'post'
         const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
+
         axios[method](url, user)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
@@ -40,12 +41,14 @@ export default class UserCrud extends Component {
 
     getUpdatedList(user, add = true) {
         const list = this.state.list.filter(u => u.id !== user.id)
+
         if (add) list.unshift(user)
         return list
     }
 
     updateField(event) {
         const user = { ...this.staet.user }
+
         uder[event.target.name] = event.target.value
         this.setState({ user })
     }

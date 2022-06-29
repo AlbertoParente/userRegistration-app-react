@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: var(--aside-width) 1fr;
     grid-template-rows: var(--header-height) 1fr var(--footer-heigth);
-    grid-template-areas: "logo header" "menu content" "menu footer";
+    grid-template-areas: "logo header""menu content""menu footer";
     height: 100vh;
     background-color: #F5F5F5;
 }
@@ -49,13 +49,10 @@ footer.footer {
 
 @media(max-width: 768px) {
     .app {
-        grid-template-rows: 
-            var(--header-height)
-            var(--menu-top-height)
-            1fr
-            var(--footer-heigth);
+        grid-template-rows:
+            var(--header-height) var(--menu-top-height) 1fr var(--footer-heigth);
         grid-template-columns: var(--aside-width) 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "logo header"
             "menu menu"
             "content content"
@@ -66,12 +63,9 @@ footer.footer {
 @media(max-width: 576px) {
     .app {
         grid-template-rows:
-            var(--logo-height)
-            var(--menu-top-height)
-            1fr
-            var(--footer-heigth);
+            var(--logo-height) var(--menu-top-height) 1fr var(--footer-heigth);
         grid-template-columns: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             "logo"
             "menu"
             "content"
